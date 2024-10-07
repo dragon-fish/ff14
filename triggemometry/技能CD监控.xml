@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<TriggernometryExport Version="1">
-  <ExportedFolder Id="b1030f11-4854-4f69-81b1-ff92a3276f97" Name="技能CD监控" Enabled="true">
+<TriggernometryExport PluginVersion="1.2.0.710">
+  <ExportedFolder Id="72b780ce-570a-4167-926b-d3f330d02f26" Name="技能CD监控(7.0更新v0.1)" Enabled="true">
     <Folders>
-      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="605816881152" Id="d932ae0d-7572-4e45-aca8-a039183b440a" Name="共通技能" Enabled="true">
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2804840136704" Id="c165b389-c394-4897-b2eb-acd801599ba8" Name="共通技能" Enabled="true">
         <Folders />
         <Triggers>
-          <Trigger Enabled="true" Name="醒梦" Id="c01c9c54-4983-48a9-b9bd-c44995958ce2" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D8A:" PrevActionsRefire="Deny">
+          <Trigger Enabled="true" Name="醒梦" Id="1044b41f-7803-4514-ab58-670776eb9496" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D8A:" PrevActionsRefire="Deny">
             <Actions>
-              <Action OrderNumber="1" UseTTSTextExpression="醒梦" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="58000">
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="醒梦" ActionType="UseTTS" ExecutionDelayExpression="58000">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
             </Actions>
@@ -15,9 +15,19 @@
               <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
             </Condition>
           </Trigger>
-          <Trigger Enabled="true" Name="即刻咏唱" Id="06d4a036-07d7-46da-92c4-8e02941cbfb7" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D89:" PrevActionsRefire="Deny">
+          <Trigger Enabled="true" Name="即刻咏唱（94级+45s版本）" Id="9b21b5cb-1af6-4ff5-b4a9-cd3e9fd2e9f8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D89:" PrevActionsRefire="Deny">
             <Actions>
-              <Action OrderNumber="1" UseTTSTextExpression="即刻" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="即刻" ActionType="UseTTS" ExecutionDelayExpression="35000">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="false" Name="即刻咏唱（60s）" Id="b1cee538-9606-4262-b137-e99d26750d74" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D89:" PrevActionsRefire="Deny">
+            <Actions>
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="即刻" ActionType="UseTTS" ExecutionDelayExpression="55000">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
             </Actions>
@@ -27,14 +37,14 @@
           </Trigger>
         </Triggers>
       </Folder>
-      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="fe3a1104-58ac-4580-abb5-16d54ac63358" Name="防护职业" Enabled="true">
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="bfec3d70-fe17-485b-b3c6-a35e0a095a45" Name="防护职业" Enabled="true">
         <Folders>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2147483648" Id="af1ca8bd-132a-4b66-baea-66d32ae123cf" Name="暗黑骑士" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2147483648" Id="e6295020-208b-4739-be7c-68d041fce01c" Name="暗黑骑士" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="嗜血" Id="9ab6b343-9e21-4cad-b187-061fda9dd5ca" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E29:" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="嗜血" Id="964a34e2-3b64-4192-8b95-992df00afaab" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E29:" PrevActions="Interrupt">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="嗜血" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="58000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="嗜血" ActionType="UseTTS" ExecutionDelayExpression="58000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -42,9 +52,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="false" Name="血乱" Id="4cd441a2-c128-4783-88d3-4c757f104090" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CDE:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="血乱" Id="6e6f2084-bfa9-4b94-a9e9-16f97fee65f5" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CDE:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="血乱" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="血乱" ActionType="UseTTS" ExecutionDelayExpression="55000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -52,9 +62,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="腐秽大地" Id="d3b58317-232a-4c38-8e5f-4a9d4f4b3271" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E37:" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="腐秽大地" Id="63531085-824e-4a4f-a044-a1f4a6b969d5" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E37:" PrevActions="Interrupt">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="腐秽大地" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="87000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="腐秽大地" ActionType="UseTTS" ExecutionDelayExpression="87000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -62,9 +72,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="掠影示现" Id="f69fcab2-e014-43d8-8d15-c2e4ec87bfe6" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4058:" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="掠影示现" Id="1eb59f84-d0fe-42dd-bd1a-de46a6034360" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4058:" PrevActions="Interrupt">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="弗雷弗雷注意能量" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="100000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="弗雷弗雷注意能量" ActionType="UseTTS" ExecutionDelayExpression="100000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -72,9 +82,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="false" Name="精雕怒斩|吸血深渊" Id="fc5d4f43-2b5b-45c6-9d7a-4407789b41c4" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(E3B|E39):" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="精雕怒斩|吸血深渊" Id="fb3c2054-4033-4f94-90d7-fa0c303dfb0c" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(E3B|E39):" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="精雕" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="精雕" ActionType="UseTTS" ExecutionDelayExpression="57000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -84,12 +94,12 @@
               </Trigger>
             </Triggers>
           </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="68719476736" Id="2056d902-d429-4b5f-bdf8-cf2d6ff6f0e2" Name="绝枪战士" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="68719476736" Id="8f196556-7f8d-4ae9-896d-0828e49c11f8" Name="绝枪战士" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="无情" Id="bd39347c-ff2e-46e8-8662-d39701b38436" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3F0A:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="无情" Id="6ea6217b-7ef1-4ce1-a509-a1dc96304e16" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3F0A:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="无情" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="无情" ActionType="UseTTS" ExecutionDelayExpression="55000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -97,9 +107,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="血壤" Id="3a9aa50d-f059-4cfa-a28c-67aa3871c947" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3F24:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="血壤" Id="80d8f416-008b-43cc-8610-f2c0820c10df" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3F24:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="血壤" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="117000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="血壤" ActionType="UseTTS" ExecutionDelayExpression="117000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -107,9 +117,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="子弹连" Id="6491136d-a0fb-483a-9929-e57d8bf41ab5" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3F12:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="子弹连" Id="3b65ab8e-0798-41b9-8d09-ff859a527f27" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3F12:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="子弹连" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="27000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="子弹连" ActionType="UseTTS" ExecutionDelayExpression="27000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -117,9 +127,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="false" Name="极光" Id="fdc7de2d-2d1a-4f82-9140-e458ffc309ad" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;.+?):3F17:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="极光" Id="ce713009-a5c4-4e9a-a74a-762f7b63bbc0" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;.+?):3F17:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="极光" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="极光" ActionType="UseTTS" ExecutionDelayExpression="57000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -127,9 +137,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="石之心|刚玉之心" Id="aabd7ca8-f1fd-42c4-a555-8fdde41dc8af" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(3F21|649E):" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="石之心|刚玉之心" Id="dc66211a-0762-4997-8e74-d11762c3f740" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(3F21|649E):" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="石之心" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="22000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="石之心" ActionType="UseTTS" ExecutionDelayExpression="22000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -139,12 +149,12 @@
               </Trigger>
             </Triggers>
           </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="262144" Id="4fc989b9-8ca8-4c9f-8878-ddebf647042c" Name="骑士" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="262144" Id="2c35b41e-b72a-4ab6-99d0-3a0023a5d10c" Name="骑士" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="false" Name="赎罪剑" Id="a82fa42e-194f-4ca5-9943-d30a7b1fa368" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):76E:[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):" PrevActionsRefire="Deny" Scheduling="FromRefirePeriod" PeriodRefire="Deny" RefirePeriodExpression="15000">
+              <Trigger Enabled="false" Name="赎罪剑" Id="26bf1e31-4b87-4007-ab36-d7f39475d67f" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):76E:[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):" PrevActionsRefire="Deny" Scheduling="FromRefirePeriod" PeriodRefire="Deny" RefirePeriodExpression="15000">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="赎罪剑" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="赎罪剑" ActionType="UseTTS">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -152,9 +162,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="战逃反应" Id="a85398ba-91f5-4ca3-8028-86ef6bce71a3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):14:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="战逃反应" Id="5902cf4f-7cf4-474e-8fa6-57159727a182" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):14:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="战逃" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="战逃" ActionType="UseTTS" ExecutionDelayExpression="55000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -162,9 +172,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="安魂祈祷" Id="a2d34936-8610-4a33-a246-c6f95f05d00e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CD7:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="安魂祈祷" Id="3f8de69a-91b4-4ca5-97fa-adcb8a558545" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CD7:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="安魂" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="安魂" ActionType="UseTTS" ExecutionDelayExpression="55000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -172,9 +182,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="偿赎剑" Id="fc24ac8a-8776-495a-af0d-398161165a2a" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1D|6493):" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="偿赎剑" Id="52f4a676-3273-4483-9030-05fd053e9dd0" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1D|6493):" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="偿赎剑" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="27000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="偿赎剑" ActionType="UseTTS" ExecutionDelayExpression="27000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -182,9 +192,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="厄运流转" Id="8ca9c185-3d3c-423e-8615-6055741cb6d1" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):17:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="厄运流转" Id="2384d57c-a484-4907-9536-5f0ce19ac6cb" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):17:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="厄运流转" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="24000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="厄运流转" ActionType="UseTTS" ExecutionDelayExpression="24000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -192,9 +202,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="沥血剑" Id="fc5c56e2-2b54-4940-a0a8-254b7d248721" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DD2:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="沥血剑" Id="3a25862b-a0db-402a-b513-57b4f67ffe5f" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DD2:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="沥血" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="沥血" ActionType="UseTTS" ExecutionDelayExpression="57000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -204,12 +214,12 @@
               </Trigger>
             </Triggers>
           </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="1048576" Id="61f3d523-ba01-4494-b7fd-2f0aefb5c497" Name="战士" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="1048576" Id="7616de5f-223c-40b2-bca7-1e87b0505cfc" Name="战士" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="动乱|群山隆起" Id="ed6f5b52-c80d-4b08-8afb-104bdb79ca86" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1CDB|6498):" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="动乱|群山隆起" Id="be5e41cf-6867-4d67-9561-ea3f9aeb8c67" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1CDB|6498):" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="动乱" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="28000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="动乱" ActionType="UseTTS" ExecutionDelayExpression="28000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -217,9 +227,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="战场风暴" Id="cc0c8801-eb74-4ee6-ba98-bd89896283af" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(2D|404E):" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="战场风暴" Id="5ae8220f-d61b-4686-93cf-68334575fd04" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(2D|404E):" PrevActions="Interrupt">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="红斩" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="26000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="红斩" ActionType="UseTTS" ExecutionDelayExpression="26000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -227,9 +237,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="原初的勇猛|原初的直觉|原初的血气" Id="5c1fc806-726c-4cd0-8200-ed525323a182" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(DDF|4050|6497):" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="原初的勇猛|原初的直觉|原初的血气" Id="f57a9f83-6664-48b9-a3fe-3b69f8c8b40a" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(DDF|4050|6497):" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="原初" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="24000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="原初" ActionType="UseTTS" ExecutionDelayExpression="24000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -237,9 +247,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="原初的解放" Id="21b09647-a340-4dc9-8b09-b9d5505ee086" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CDD:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="原初的解放" Id="f4d8213e-116d-4433-a66f-d851f0820d8c" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CDD:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="解放" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="解放" ActionType="UseTTS" ExecutionDelayExpression="55000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -247,9 +257,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="泰然自若" Id="d2164db5-6191-489c-8500-22616391a077" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DE0:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="泰然自若" Id="b2b8a18a-b965-4001-9937-145dfe14fdf3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DE0:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="泰然" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="59000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="泰然" ActionType="UseTTS" ExecutionDelayExpression="59000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -262,14 +272,14 @@
         </Folders>
         <Triggers />
       </Folder>
-      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="284007333888" Id="fedfc220-91bd-4d84-8887-d565a45dcaed" Name="近战职业" Enabled="true">
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="284007333888" Id="b6b787f1-eded-49c3-b2d2-8c5d8069acbc" Name="近战职业" Enabled="true">
         <Folders>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2097152" Id="bfe50da8-294b-462c-a1e2-98308b7de8d4" Name="龙骑士" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2097152" Id="cc0e490e-e61f-4c6a-84f2-0877cf5ac5be" Name="龙骑士" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="false" Name="巨龙视线" Id="e5955a4e-880c-46fc-b8fc-ea7db7a04d50" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CE6:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="巨龙视线" Id="0f58f586-25b1-40c0-9427-1756af95493b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CE6:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="龙肠" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="龙肠" ActionType="UseTTS" ExecutionDelayExpression="115000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -277,9 +287,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="高跳" Id="fbbd3409-27e9-43b3-a34c-02770da76364" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):405E:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="高跳" Id="82557f1d-d8af-42a2-b130-0a83bd4addf1" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):405E:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="高跳" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="27000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="高跳" ActionType="UseTTS" ExecutionDelayExpression="27000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -287,9 +297,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="龙炎冲" Id="d1f48ee0-e2d3-43b5-8787-4463241f1a89" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):60:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="龙炎冲" Id="0b53ad7e-0797-4552-a6b9-f439aa6759a6" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):60:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="龙炎冲" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="117000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="龙炎冲" ActionType="UseTTS" ExecutionDelayExpression="117000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -297,9 +307,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="猛枪" Id="c718ed3d-48e9-409d-926c-8deb8c4daf47" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):55:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="猛枪" Id="de7911ae-1a55-4f44-9c47-3ad5d9c8b704" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):55:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="舍身" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="舍身" ActionType="UseTTS" ExecutionDelayExpression="55000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -307,9 +317,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="战斗连祷" Id="4270383f-329b-41fc-a354-c7954c5a536b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DE5:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="战斗连祷" Id="b6f9154d-5c07-49b2-a3d1-c4c1f61f8577" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DE5:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="连祷" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="连祷" ActionType="UseTTS" ExecutionDelayExpression="115000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -317,9 +327,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="樱花怒放" Id="017439d3-1d16-41f8-9204-668335acb790" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(58|64AC):" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="樱花怒放" Id="9e4f53b7-5407-4c68-a5f6-1ca8c7240d07" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(58|64AC):" PrevActions="Interrupt">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="樱花连" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="17000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="樱花连" ActionType="UseTTS" ExecutionDelayExpression="17000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -329,12 +339,12 @@
               </Trigger>
             </Triggers>
           </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="536870912" Id="37aacf22-78cb-4530-92a0-0802b8db755c" Name="忍者" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="536870912" Id="4f520aaf-56b3-4cca-a8fe-a0c9dc150192" Name="忍者" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="分身之术" Id="39026a35-7e9c-4458-a5d3-355e4f301c2e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):406D:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="分身之术" Id="2f0be0e4-56d8-4579-a9f8-c64a68182d27" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):406D:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="分身" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="85000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="分身" ActionType="UseTTS" ExecutionDelayExpression="85000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -342,9 +352,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="攻其不备" Id="9fd39651-7bc9-4156-8e14-23fdb14819b5" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):8D2:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="攻其不备" Id="edda8cbe-618d-4284-89b1-1e73fd2836d5" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):8D2:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="背刺" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="背刺" ActionType="UseTTS" ExecutionDelayExpression="55000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -352,9 +362,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="天地人" Id="e456d9bb-d2f1-46f3-98d2-82e4b6ce82ee" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CEB:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="天地人" Id="7ffeb6eb-1d8a-4eed-9dcf-cf9dd55f139e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CEB:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="天地人" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="天地人" ActionType="UseTTS" ExecutionDelayExpression="115000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -362,9 +372,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="夺取" Id="722834f6-2aa0-4f69-a256-c467ae076456" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):8C8:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="夺取" Id="f46e333b-0b98-4362-862e-dc11c1d87790" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):8C8:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="夺取" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="117000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="夺取" ActionType="UseTTS" ExecutionDelayExpression="117000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -374,12 +384,12 @@
               </Trigger>
             </Triggers>
           </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="524288" Id="a4b16edd-be18-453a-9a81-c93ee1abeb8f" Name="武僧" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="524288" Id="5dc8214c-3d26-44b0-85dd-850b111060af" Name="武僧" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="红莲极意" Id="72637641-892a-4729-b3e1-970a5c5d7e8b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CE3:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="红莲极意" Id="20afc2cb-5393-40fd-9d6d-e25d8738d5f1" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CE3:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="红莲" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="58000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="红莲" ActionType="UseTTS" ExecutionDelayExpression="58000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -387,9 +397,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="义结金兰 " Id="747aa9a1-15f7-4cbf-a15d-8212dc120a75" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CE4:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="义结金兰 " Id="725414d0-b0ee-42c8-b70e-18702a5c6a3f" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CE4:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="结义" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="118000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="结义" ActionType="UseTTS" ExecutionDelayExpression="118000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -397,9 +407,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="疾风极意" Id="a5eb714f-c8ac-4cdb-ab08-398cc84ef2b3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):64A6:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="疾风极意" Id="6d2a67d5-6136-4506-8a8e-3b34ced7cd5c" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):64A6:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="疾风" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="88000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="疾风" ActionType="UseTTS" ExecutionDelayExpression="88000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -407,9 +417,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="Dot" Id="c099f4a8-7c67-4219-ab4b-714ecbf2dc43" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):42:" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="Dot" Id="a9ecf529-3e5f-421d-9b18-9f0509faa259" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):42:" PrevActions="Interrupt">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="破碎拳" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="15000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="破碎拳" ActionType="UseTTS" ExecutionDelayExpression="15000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -417,9 +427,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="false" Name="功力" Id="317af757-e31f-4f83-af93-4f36a6de86c2" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3D:" PrevActions="Interrupt">
+              <Trigger Enabled="false" Name="功力" Id="a5d090f2-371e-4dd3-8072-3d0c3fe9aa4c" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3D:" PrevActions="Interrupt">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="双掌" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="9000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="双掌" ActionType="UseTTS" ExecutionDelayExpression="9000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -427,9 +437,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="false" Name="震脚" Id="58f6796f-1875-4b3b-b573-0bee87c37e31" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):45:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="震脚" Id="993db1e8-2b36-4611-bcf1-61cb33a7ff35" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):45:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="震脚" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="39000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="震脚" ActionType="UseTTS" ExecutionDelayExpression="39000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -437,9 +447,614 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="金刚极意" Id="8b7b2bf8-0f28-454c-a2f3-3c97c59fda7b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CE2:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="金刚极意" Id="42644b6a-4263-4200-b6a3-4c6dff5856b3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CE2:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="金刚" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="118000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="金刚" ActionType="UseTTS" ExecutionDelayExpression="118000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="8589934592" Id="15dbd979-7e28-4100-bec2-5ef91742066d" Name="武士" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="明镜止水" Id="04649dcc-97d4-4618-b1b5-dbcf5f719fb6" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D4B:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="明镜" ActionType="UseTTS" ExecutionDelayExpression="53000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="必杀剑·闪影|必杀剑·红莲" Id="4013a0e0-f90a-430d-b177-8dd2e32aa058" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1D48|4061):" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="闪影" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="意气冲天" Id="538d4504-505d-40b6-a050-a5219c32f15b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4062:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="意气冲天" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="燕回返" Id="13f3fb54-b7a2-4abf-9591-e716a5003166" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(4064|4065|4066|64B6):" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="燕返" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="彼岸花" Id="6bf8ee4e-cd39-420d-8eaa-e92aeae94256" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D41:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="彼岸花" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="274877906944" Id="30086ee9-a2d3-4add-9242-23ce962c2d04" Name="钐镰客（未测试" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="false" Name="神秘纹" Id="23042778-27c9-4db9-b3c8-99fb90687f87" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5F54:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="神秘纹" ActionType="UseTTS" ExecutionDelayExpression="28000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="false" Name="灵魂切割|灵魂钐割" Id="82361a2b-407d-4c9f-9d20-ab629d766980" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(5F3C|5F3D):" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="灵魂切割" ActionType="UseTTS" ExecutionDelayExpression="27000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="神秘环" Id="f3a14f19-d3cf-407e-a015-6d2903a3c3c2" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5F55:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="神秘环" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="暴食" Id="53645b13-3f8f-4f9e-9228-7825b3c96641" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5F49:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="暴食" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="死亡之影" Id="76a2ab07-fa29-4e08-9762-be5661ff27f7" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5F3A:" PrevActions="Interrupt">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="补Dot" ActionType="UseTTS" ExecutionDelayExpression="25000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+        </Folders>
+        <Triggers />
+      </Folder>
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="3358345e-4d1c-4e20-9cb1-9d8270a8c6ce" Name="远程物理职业" Enabled="true">
+        <Folders>
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="137438953472" Id="d98849c0-58ba-4a86-a441-f16cb5e88f86" Name="舞者" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="标准舞步" Id="7a67fa0b-3739-4d6d-8b8c-d5124253ab27" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3E7D:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="小舞" ActionType="UseTTS" ExecutionDelayExpression="29000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="技巧舞步" Id="43beb63f-76a3-40bb-8aaa-7a2356766502" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3E7E:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="大舞" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="百花争艳" Id="54ff2eda-00b8-4118-b6ec-aa16469cdda8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3E8D:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="百花" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4194304" Id="921fd9d4-a111-47da-bbbe-25b3ee4df878" Name="吟游诗人" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="侧风诱导箭" Id="d562b8a6-811e-4828-bb2c-0e24671a6e2b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DEA:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="侧风" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="战斗之声" Id="c4813247-9ac9-40d7-a75b-5cde98298362" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):76:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="战歌" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="纷乱箭" Id="0f9a6893-b89b-4002-8a38-f4abba7c2212" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6B:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="纷乱" ActionType="UseTTS" ExecutionDelayExpression="118000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="猛者强击" Id="160ca48d-d5e8-4dea-be06-b88a9e8617e7" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):65:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="猛者" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="九天连箭" Id="b1aabc2d-b0e8-4703-8eeb-64fa1116a302" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DE6:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="九天" ActionType="UseTTS" ExecutionDelayExpression="13000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="辉煌箭|影噬箭音效版【二选一" Id="5591cc14-dd3e-4f4c-9eba-9ca7cd26c522" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):(7A|BBA):[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):">
+                <Actions>
+                  <Action OrderNumber="1" SystemBeepLengthExpression="300" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="辉煌箭">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="放浪神的小步舞曲" Id="a08bed9f-cbe2-4a7a-a1bc-1a67cebec170" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DE7:" PrevActions="Interrupt">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="切歌" ActionType="UseTTS" ExecutionDelayExpression="43000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="旅神歌" ActionType="UseTTS" ExecutionDelayExpression="75000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="false" Name="辉煌箭|影噬箭语音版【二选一" Id="269d4385-c743-4691-b523-596609690712" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):(7A|BBA):[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="辉煌箭" ActionType="UseTTS">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="Dot" Id="082f5aa8-6924-4cc8-96f5-d10adabda100" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(64|71|1CEE|1CEF|DE8):" PrevActions="Interrupt">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="补Dot" ActionType="UseTTS" ExecutionDelayExpression="40000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="贤者的叙事谣" Id="f2dc0ed9-02ea-4fc9-92a4-8ef3cfd51c83" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):72:" PrevActions="Interrupt">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="切歌" ActionType="UseTTS" ExecutionDelayExpression="33000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="贤者歌" ActionType="UseTTS" ExecutionDelayExpression="85000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="军神的叙事谣" Id="6c758c57-1fea-4f0f-8c70-d030a5364c2d" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):74:" PrevActions="Interrupt">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="切歌" ActionType="UseTTS" ExecutionDelayExpression="43000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="军神歌" ActionType="UseTTS" ExecutionDelayExpression="75000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="大地神" Id="1d7f9d37-0755-4af3-873c-03eb136da872" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CF0:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="大地神" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="1073741824" Id="5efef2b4-1067-4366-ac05-6c7e0e762dc2" Name="机工士" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="枪管加热" Id="a64d27f5-ab8e-45d0-b847-a87a0734eb9c" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CF6:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="枪管加热" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="空气锚" Id="0b85af84-c61e-4419-81bf-0d645d1df97e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4074:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="空气锚" ActionType="UseTTS" ExecutionDelayExpression="35000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="整备" Id="e7458309-3d7e-4e3f-afe3-8edb700540cd" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):B3C:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="整备" ActionType="UseTTS" ExecutionDelayExpression="53000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="钻头|毒菌冲击" Id="d04c06f6-a533-4b3d-bd31-dcad4eccadb8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(4072|4073):" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="钻头" ActionType="UseTTS" ExecutionDelayExpression="17000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="回转飞锯" Id="3994e130-8dc3-4b0e-a178-b4294d16aaf9" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):64BC:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="回转飞锯" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="false" Name="空气锚" Id="d69fda6b-0777-4c02-a0d0-f3a60862e540" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4074:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="空气锚" ActionType="UseTTS" ExecutionDelayExpression="35000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+        </Folders>
+        <Triggers />
+      </Folder>
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2216287010816" Id="71c72850-5a82-4362-8e31-db01064451ae" Name="远程魔法职业" Enabled="true">
+        <Folders>
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="16777216" Id="1e9487ac-8dbf-412f-a8e9-ac5b641ed3be" Name="黑魔法师" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="激情咏唱" Id="f1dbec53-c882-47d8-991d-b8e3159c8eea" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF6:" PrevActions="Interrupt" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="激情" ActionType="UseTTS" ExecutionDelayExpression="27000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="三连咏唱" Id="c6b4b0b8-6e5f-4407-9824-b3eec935a06d" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CFD:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="三连魔" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="黑魔纹" Id="a2848c5e-f095-4883-b113-c7a2845c8075" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF5:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="黑魔纹" ActionType="UseTTS" ExecutionDelayExpression="117000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="详述" Id="99353746-cc03-4bd7-82a0-43388922cf71" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):64C4:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="详述" ActionType="UseTTS" ExecutionDelayExpression="117000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="雷云" Id="2ef0c888-7c16-4b61-86f9-183452daaae6" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):A4:[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="雷云" ActionType="UseTTS">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="火苗" Id="2879cac0-f114-40c3-9427-7e1795f50eb8" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):A5:[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="火苗" ActionType="UseTTS">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="魔泉" Id="b9e06fb0-6cc0-41ab-8422-4a100cd0359b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):9E:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="魔泉" ActionType="UseTTS" ExecutionDelayExpression="117000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17179869184" Id="d683b6db-f6e4-4b52-8afb-22c91e198d04" Name="赤魔法师" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="短兵相接" Id="e2f8fc3c-2a71-47cd-b4b0-ae03b70a1533" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D52:" PrevActions="Interrupt" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="冲锋" ActionType="UseTTS" ExecutionDelayExpression="32000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="鼓励" Id="65a511ac-452d-4829-ab59-095a80e92987" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D60:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="鼓励" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="六分反击" Id="9cda2b77-34a3-45b4-b428-552ed0563a0a" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D5F:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="六分反击" ActionType="UseTTS" ExecutionDelayExpression="34000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="飞刺" Id="12689d74-5679-4692-a4da-4e64a60a3085" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D5D:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="飞刺" ActionType="UseTTS" ExecutionDelayExpression="24000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="移转|交剑" Id="1a5f81c2-9729-41ba-bcfa-7f9df42b710a" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1D5B|408F):" PrevActions="Interrupt" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="后跳" ActionType="UseTTS" ExecutionDelayExpression="32000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="倍增" Id="86c1d516-b0bf-4500-b720-d8bc87b94045" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D61:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="倍增" ActionType="UseTTS" ExecutionDelayExpression="105000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="促进" Id="f15c2c2f-4fd2-4679-a859-ae1309eef1a1" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D5E:" PrevActions="Interrupt" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="促进" ActionType="UseTTS" ExecutionDelayExpression="52000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="67108864" Id="ae0510b5-229c-45bf-8301-119fe4a15fa0" Name="召唤师" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="能量吸收|能量抽取" Id="c7bb4304-def4-434e-ac5d-8ee6a566e804" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(407C|407E):" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="能量吸收" ActionType="UseTTS" ExecutionDelayExpression="58000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="守护之光" Id="580ebe1b-a08c-4eaa-9fcc-dafd0674f1a6" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):64C7:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="灵护" ActionType="UseTTS" ExecutionDelayExpression="118000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="龙神附体|不死鸟附体" Id="b95971b4-ed01-48b8-93e9-90b13ef276f3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1D03|64E7):" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="附体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2199023255552" Id="3cc449fb-da49-4c92-90de-d3e224699a40" Name="绘灵法师" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="false" Name="绒球三连" Id="68bdef01-e7b0-4238-a474-ad01ef8d8295" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(876E):" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="动物" ActionType="UseTTS" ExecutionDelayExpression="5000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${Caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="风景" Id="b4036ee6-49a7-4a79-90e3-eb849a6a1116" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):8773:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="风景" ActionType="UseTTS" ExecutionDelayExpression="118000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="坦培拉涂层" Id="d5918f2b-350b-42df-a423-a728af23c3b6" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):877D:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="涂层" ActionType="UseTTS" ExecutionDelayExpression="118000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="重锤" Id="171a1c3f-617c-4efb-902d-cbfaa56aa691" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):8772:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="重锤" ActionType="UseTTS" ExecutionDelayExpression="58000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="false" Name="绒球(仅莫古力）" Id="4c91b679-2cc5-4c5a-86c2-d33bac8bea4e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(876E):" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="动物" ActionType="UseTTS" ExecutionDelayExpression="38000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+                <Conditions />
+              </Trigger>
+              <Trigger Enabled="true" Name="绒球4连（出问题就用仅莫古力版本）" Id="87f7362f-74f0-4cc4-aa62-af9efb9b7e75" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(?:876E|876F|876A|876B):" PrevActionsRefire="Deny" RefirePeriodExpression="40000">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="动物" ActionType="UseTTS" ExecutionDelayExpression="38000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -450,127 +1065,17 @@
               </Trigger>
             </Triggers>
           </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="8589934592" Id="0ff52d75-a3ef-4146-b958-3d509a7d8c08" Name="武士" Enabled="true">
-            <Folders />
-            <Triggers>
-              <Trigger Enabled="true" Name="明镜止水" Id="5f7c726b-7c27-4e11-9e0b-7b629f59728e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D4B:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="明镜" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="53000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="必杀剑·闪影|必杀剑·红莲" Id="457ebca3-9114-4fc8-95f6-468d13232403" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1D48|4061):" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="闪影" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="意气冲天" Id="433df24e-1de3-4530-b8d2-a5d7e23196ea" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4062:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="意气冲天" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="燕回返" Id="abeb65ce-323a-4e22-ad0d-b2d1c029a045" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(4064|4065|4066|64B6):" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="燕返" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="彼岸花" Id="425ff3c7-9728-464e-bb7a-13a8e3125997" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D41:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="彼岸花" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-            </Triggers>
-          </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="274877906944" Id="6640b54d-c2d0-4dcd-bb53-7c091af951a6" Name="钐镰客（未测试" Enabled="true">
-            <Folders />
-            <Triggers>
-              <Trigger Enabled="false" Name="神秘纹" Id="acd8c3a3-8b58-428b-91f8-f5fc64d06029" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5F54:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="神秘纹" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="28000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="灵魂切割|灵魂钐割" Id="31f2f32d-3ce3-47ca-8d26-b625582233e0" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(5F3C|5F3D):" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="灵魂切割" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="27000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="神秘环" Id="340b84db-2046-4265-b885-ffe3c568a32d" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5F55:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="神秘环" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="暴食" Id="c9dd855b-5e52-4f5e-8484-a253c063c039" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5F49:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="暴食" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="死亡之影" Id="f3d8f697-9e64-4f1f-a222-2c35b8764634" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5F3A:" PrevActions="Interrupt">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="补Dot" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="25000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-            </Triggers>
-          </Folder>
         </Folders>
         <Triggers />
       </Folder>
-      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="c470eb3a-6313-420b-ad4d-133179e9031d" Name="远程物理职业" Enabled="true">
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="554193387520" Id="272bec68-e900-4604-a313-d4fc616db52b" Name="治疗职业" Enabled="true">
         <Folders>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="137438953472" Id="2d189eb2-b995-4269-b771-1a5f84043f15" Name="舞者" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="8388608" Id="87f1c6cc-8b33-4512-a781-c9774790e549" Name="白魔法师" Enabled="false">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="标准舞步" Id="9fcd59b3-bab4-4dd8-a8d3-3fa9b5bba9a4" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3E7D:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="节制" Id="70c7403c-1317-493b-858e-dda60ffe08ff" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4098:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="小舞" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="29000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="节制" ActionType="UseTTS" ExecutionDelayExpression="115000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -578,9 +1083,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="技巧舞步" Id="43ca7e1f-bd26-40db-94ee-b96aaed020d4" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3E7E:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="庇护所" Id="0f499e0c-ff69-471f-b037-399e5d714237" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF1:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="大舞" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="庇护所" ActionType="UseTTS" ExecutionDelayExpression="87000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -588,9 +1093,69 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="百花争艳" Id="9a816f56-028f-4d2e-9698-f7d3f13ec90c" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):3E8D:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="神名" Id="b3be5daf-48c1-431f-b89a-b40a25fe0f51" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF2:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="百花" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="神名" ActionType="UseTTS" ExecutionDelayExpression="59000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="法令" Id="2ecbf3aa-d3b2-4db5-bff0-9a81ea2ba2e8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF3:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="法令" ActionType="UseTTS" ExecutionDelayExpression="37000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="礼仪之铃" Id="c9f2b55f-5161-4a0b-ac37-96dda98d5659" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6506:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="礼仪之铃" ActionType="UseTTS" ExecutionDelayExpression="177000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="神祝祷" Id="cfd56be0-4e51-4321-8338-56eb45f907f6" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D08:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="神祝祷" ActionType="UseTTS" ExecutionDelayExpression="27000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="水流幕" Id="0f8d6b07-5d9d-4392-bf0a-fb59a339430b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6505:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="水流幕" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="false" Name="无中生有" Id="6acfe715-fb7d-405a-983a-ce3443488ede" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D06:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="无中生有" ActionType="UseTTS" ExecutionDelayExpression="58000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="神速咏唱" Id="aba9a9ea-0404-4fc9-bce0-e7526346410f" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):88:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="神速咏唱" ActionType="UseTTS" ExecutionDelayExpression="117000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -600,12 +1165,12 @@
               </Trigger>
             </Triggers>
           </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4194304" Id="37fe5359-560c-4953-bcef-afd25a142022" Name="吟游诗人" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="549755813888" Id="70664593-4fa0-4e99-ab9f-e638bc2e73f9" Name="贤者（未测试" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="侧风诱导箭" Id="9ab54438-635d-42f7-817c-87c44c848059" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DEA:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="发炎" Id="281ed952-5c51-482f-9ed8-f3bb7cbf3aa3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF9:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="侧风" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="发炎" ActionType="UseTTS" ExecutionDelayExpression="37000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -613,9 +1178,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="战斗之声" Id="41c7a00a-76e8-496e-92ab-1e43fbd688d4" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):76:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="拯救" Id="6abf27d7-d82b-4564-bdf7-e8e304c93655" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EE6:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="战歌" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="拯救" ActionType="UseTTS" ExecutionDelayExpression="88000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -623,9 +1188,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="纷乱箭" Id="f31f6731-7599-418e-950e-2261abc87a21" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6B:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="神翼" Id="3bf14c6c-706a-48cf-9a15-61e8ee274dc5" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EE7:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="纷乱" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="118000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="神翼" ActionType="UseTTS" ExecutionDelayExpression="43000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -633,9 +1198,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="猛者强击" Id="d9fc089a-4541-4829-93b0-d940e1a42ea4" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):65:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="坚角清汁" Id="724edba6-df2e-4b84-a3c6-9ea9be766fe4" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEA:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="猛者" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="坚角清汁" ActionType="UseTTS" ExecutionDelayExpression="28000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -643,9 +1208,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="九天连箭" Id="d0725178-347d-412e-94c0-a3b01fff75ee" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DE6:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="白牛清汁" Id="edc06671-86a0-4ec2-b911-9ca0031735ac" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEF:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="九天" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="13000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="白牛清汁" ActionType="UseTTS" ExecutionDelayExpression="43000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -653,9 +1218,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="辉煌箭|影噬箭音效版【二选一" Id="8eb30d5e-f2e0-40eb-a132-e2d077dc40fc" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):(7A|BBA):[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):">
+              <Trigger Enabled="false" Name="寄生清汁" Id="933016cf-1e2c-4cd3-b971-7ac492895857" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEB:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" SystemBeepLengthExpression="300" UseTTSTextExpression="辉煌箭" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="SystemBeep">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="寄生清汁" ActionType="UseTTS" ExecutionDelayExpression="28000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -663,12 +1228,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="放浪神的小步舞曲" Id="f58b1742-a293-479c-b0ae-047b1783ece6" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DE7:" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="自生" Id="00e8f573-44e3-4fa1-9876-d5f114977c49" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEE:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="切歌" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="43000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                  <Action OrderNumber="2" UseTTSTextExpression="旅神歌" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="75000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="自生" ActionType="UseTTS" ExecutionDelayExpression="58000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -676,9 +1238,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="false" Name="辉煌箭|影噬箭语音版【二选一" Id="a53d81d5-88db-4141-8bf8-c80760ecd907" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):(7A|BBA):[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):">
+              <Trigger Enabled="true" Name="消化" Id="c6b7c48a-de71-453a-94c8-5f85511a3a3a" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EED:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="辉煌箭" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="消化" ActionType="UseTTS" ExecutionDelayExpression="28000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -686,9 +1248,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="Dot" Id="fe014984-1a24-4f7e-bb54-3a4dd78096a4" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(64|71|1CEE|1CEF|DE8):" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="活化" Id="9bffdab7-65f7-4bfc-9660-205909063e68" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEC:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="补Dot" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="40000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="活化" ActionType="UseTTS" ExecutionDelayExpression="88000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -696,12 +1258,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="贤者的叙事谣" Id="6798317d-74dc-45e5-bb9e-eb5613c8b77a" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):72:" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="输血" Id="5659d805-21c2-4f34-ac6b-2759c2c713b4" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF1:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="切歌" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="33000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                  <Action OrderNumber="2" UseTTSTextExpression="贤者歌" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="85000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="输血" ActionType="UseTTS" ExecutionDelayExpression="118000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -709,12 +1268,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="军神的叙事谣" Id="4ae1e34a-e1f8-4218-b3a1-1d72f1d5a835" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):74:" PrevActions="Interrupt">
+              <Trigger Enabled="true" Name="泛输血" Id="cb9100b5-5274-4717-92ad-4f5cd213566f" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF7:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="切歌" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="43000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                  <Action OrderNumber="2" UseTTSTextExpression="军神歌" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="75000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="泛输血" ActionType="UseTTS" ExecutionDelayExpression="118000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -722,25 +1278,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="大地神" Id="10c4b2c9-1b66-43d0-a93e-0d1862a0dafc" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CF0:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="魂灵风息" Id="b8c753ce-f515-48aa-8631-f7ab7426ef77" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EFE:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="大地神" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-                <Conditions />
-              </Trigger>
-            </Triggers>
-          </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="1073741824" Id="06825ba8-ec51-4726-815f-4ed80a981bbf" Name="机工士" Enabled="true">
-            <Folders />
-            <Triggers>
-              <Trigger Enabled="true" Name="枪管加热" Id="ddca190d-1e82-48a2-a98e-7df2eab60765" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CF6:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="枪管加热" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="魂灵风息" ActionType="UseTTS" ExecutionDelayExpression="118000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -748,9 +1288,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="空气锚" Id="c68a0308-ad6c-4a3f-8ba4-051f27409952" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4074:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="混合" Id="b174fb5c-e3b0-4dfe-983b-ebc66740aefb" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EFD:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="空气锚" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="35000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="混合" ActionType="UseTTS" ExecutionDelayExpression="58000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -758,9 +1298,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="整备" Id="113768ad-4974-40b4-b06b-de34f0301d1b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):B3C:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="整体论" Id="740358d3-ee3b-4f57-9fb2-d745d71559f7" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF6:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="整备" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="53000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="整体论" ActionType="UseTTS" ExecutionDelayExpression="118000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -768,29 +1308,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="钻头|毒菌冲击" Id="307ccd2e-79df-4ae2-babd-6ecfc5bdd1eb" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(4072|4073):" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="根素" Id="c8fcd82c-6035-4be1-9b24-22d9e5129602" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF5:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="钻头" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="17000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="回转飞锯" Id="d84c358f-3b13-483e-91f8-9458701428b3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):64BC:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="回转飞锯" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="空气锚" Id="4e058cac-8f1b-4b66-a7ae-14d9ff7cc065" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4074:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="空气锚" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="35000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="根素" ActionType="UseTTS" ExecutionDelayExpression="87000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -800,17 +1320,12 @@
               </Trigger>
             </Triggers>
           </Folder>
-        </Folders>
-        <Triggers />
-      </Folder>
-      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="04424f4b-d438-4041-b5ef-47da6ccb61e8" Name="远程魔法职业" Enabled="true">
-        <Folders>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="16777216" Id="e0455cd0-737e-434f-a9bc-ce84359e51b6" Name="黑魔法师" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="134217728" Id="8fed01aa-942b-45f9-b037-b114db62582c" Name="学者" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="激情咏唱" Id="592cb6b5-e046-4c50-b4dd-52faf25f8e01" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF6:" PrevActions="Interrupt" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="深谋远虑之策" Id="43d45823-ddc2-4f9e-af97-bba31190a55a" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D0A:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="激情" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="27000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="绿帽" ActionType="UseTTS" ExecutionDelayExpression="43000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -818,9 +1333,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="三连咏唱" Id="77e8682f-a741-4257-8c8b-5398db3ffe17" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1CFD:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="秘策" Id="74c2a4d1-8aae-4b44-bff0-38b86882e300" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):409E:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="三连魔" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="秘策" ActionType="UseTTS" ExecutionDelayExpression="87000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -828,9 +1343,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="黑魔纹" Id="4c19964c-8a8b-4d33-8541-b5666c7d3917" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF5:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="连环计" Id="0bcb4936-142d-484f-b00c-abb5db22f9b2" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D0C:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="黑魔纹" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="117000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="连环计" ActionType="UseTTS" ExecutionDelayExpression="115000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -838,9 +1353,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="详述" Id="609e9e67-2bfd-4484-ab81-87e20ce70615" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):64C4:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="以太超流" Id="9f0812e4-5954-4475-9c43-05a525e4258f" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):A6:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="详述" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="117000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="以太" ActionType="UseTTS" ExecutionDelayExpression="57000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -848,9 +1363,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="雷云" Id="3e7e9874-3eec-4a40-b4c1-d1d254a0d1e2" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):A4:[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):">
+              <Trigger Enabled="false" Name="炽天召唤" Id="06fe81f3-3bf6-4042-9627-19847925d725" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):40A1:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="雷云" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="大天使" ActionType="UseTTS" ExecutionDelayExpression="115000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -858,9 +1373,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="火苗" Id="85873a97-ea1c-4c63-9985-cd70b6380a52" RegularExpression="^.{15}(?:\w+ |)(?&lt;type&gt;1A):A5:[^:]*:[^:]*:[^:]*:(?&lt;caster&gt;.+?):">
+              <Trigger Enabled="false" Name="异想的幻光" Id="9f55c2f8-58f1-4486-aba6-f0a501c162c8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):409A:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="火苗" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="幻光" ActionType="UseTTS" ExecutionDelayExpression="117000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -868,9 +1383,39 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="魔泉" Id="172dd68f-27f7-4ba8-93ec-5cee550551fd" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):9E:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="转化" Id="10b2fc47-9f00-413e-9d38-ee5e5ec62ff3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E03:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="魔泉" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="117000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="转化" ActionType="UseTTS" ExecutionDelayExpression="177000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="false" Name="仙光的低语" Id="339159fd-f278-496c-b64d-6b225a6bd0f9" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4099:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="低语" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="生命回生法" Id="3409051b-d1a2-411a-b399-3d3d15188703" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):650B:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="回生" ActionType="UseTTS" ExecutionDelayExpression="57000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="false" Name="疾风怒涛之计" Id="a571d29b-0de5-44b5-aeb7-bcc62dfd445d" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):650C:" PrevActionsRefire="Deny">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="跑快快" ActionType="UseTTS" ExecutionDelayExpression="117000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -880,12 +1425,12 @@
               </Trigger>
             </Triggers>
           </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17179869184" Id="a67a851f-754e-4074-8963-a36b3f60ec3a" Name="赤魔法师" Enabled="true">
+          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4294967296" Id="bde4c74c-7e18-4127-af40-20a315ae6603" Name="占星术士" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="短兵相接" Id="74fb1124-3fc4-46f2-8714-b1b237d617cf" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D52:" PrevActions="Interrupt" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="命运之轮" Id="c1e08360-9ab2-407b-a8a4-519c81745104" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E1D:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="冲锋" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="32000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="命运之轮" ActionType="UseTTS" ExecutionDelayExpression="57000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -893,9 +1438,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="鼓励" Id="c42cd731-0b55-4d83-a7a5-40b28694343d" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D60:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="天星交错" Id="66cf4d01-30f6-4d25-b158-324a9f7eb4c5" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):40AC:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="鼓励" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="天星交错" ActionType="UseTTS" ExecutionDelayExpression="27000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -903,9 +1448,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="六分反击" Id="653b02fc-48e4-4325-9dd0-42689f70ca3f" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D5F:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="占卜" Id="408b7203-a3b0-47f5-a844-babab01b6eba" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):40A8:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="六分反击" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="34000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="占卜" ActionType="UseTTS" ExecutionDelayExpression="115000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -913,9 +1458,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="飞刺" Id="04a739f2-87ef-4e3f-93e6-6333a0dc6d0e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D5D:" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="中间学派" Id="e887929c-024a-487d-8778-b517c248bf41" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):40AF:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="飞刺" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="24000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="中间学派" ActionType="UseTTS" ExecutionDelayExpression="115000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -923,9 +1468,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="移转|交剑" Id="5033a3d8-ba68-45a0-a4b2-c29d8c17bd67" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1D5B|408F):" PrevActions="Interrupt" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="地星" Id="2915ccb1-71f2-4175-8fda-84db76cd60fb" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D0F:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="后跳" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="32000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="地星" ActionType="UseTTS" ExecutionDelayExpression="55000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -933,9 +1478,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="倍增" Id="f7ac112b-cb32-4380-a91e-7665a53d376e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D61:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="擢升" Id="57ea2621-41cf-42a9-9548-bc7fb0d52313" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6511:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="倍增" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="105000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="擢升" ActionType="UseTTS" ExecutionDelayExpression="57000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -943,9 +1488,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="促进" Id="2b790b5d-95d4-4c62-b594-11fa788ea425" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D5E:" PrevActions="Interrupt" PrevActionsRefire="Deny">
+              <Trigger Enabled="false" Name="抽卡" Id="d3e1064a-262b-4d44-904a-29d93447404f" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):909A:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="促进" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="52000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="抽卡" ActionType="UseTTS" ExecutionDelayExpression="27000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -953,14 +1498,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-            </Triggers>
-          </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="67108864" Id="abf1a2ad-d9e6-4a98-a397-302c792a0f5a" Name="召唤师" Enabled="true">
-            <Folders />
-            <Triggers>
-              <Trigger Enabled="true" Name="能量吸收|能量抽取" Id="18678a8e-5dc9-4028-87c8-3a6d02b4dfe8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(407C|407E):" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="先天" Id="b99832a5-c904-4e09-bbe1-225e1e75d6e3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E1E:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="能量吸收" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="58000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="先天" ActionType="UseTTS" ExecutionDelayExpression="37000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -968,9 +1508,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="龙神附体|不死鸟附体" Id="a54d6354-4cd7-4ba0-877c-d988c23cd3f8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(1D03|64E7):" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="小奥秘卡" Id="49e13b72-d9d8-4af8-98aa-7936fa5bf04c" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D13:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="附体" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="小奥秘卡" ActionType="UseTTS" ExecutionDelayExpression="58000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -978,9 +1518,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="守护之光" Id="6f5a36ec-6851-4f1c-9801-d680cf2b177e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):64C7:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="光速" Id="f97d92df-5798-4a89-a53e-e88180c968c8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E16:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="灵护" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="118000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="光速" ActionType="UseTTS" ExecutionDelayExpression="88000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -988,19 +1528,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-            </Triggers>
-          </Folder>
-        </Folders>
-        <Triggers />
-      </Folder>
-      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="554193387520" Id="5d3747e4-4349-4107-b3a8-df0ad6c773c0" Name="治疗职业" Enabled="true">
-        <Folders>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="8388608" Id="03f1868c-bfdf-4ca6-840c-763d2f980c2e" Name="白魔法师" Enabled="true">
-            <Folders />
-            <Triggers>
-              <Trigger Enabled="false" Name="节制" Id="c1607693-c39f-4335-b772-aa0e5e3d9c71" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4098:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="大宇宙" Id="78e69fdb-3e67-4b2c-93f8-179a932995c5" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6512:" PrevActionsRefire="Deny">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="节制" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="大宇宙" ActionType="UseTTS" ExecutionDelayExpression="177000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -1008,455 +1538,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="false" Name="庇护所" Id="90fb1e13-8e03-49a2-a4de-269b2dad13cb" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF1:" PrevActionsRefire="Deny">
+              <Trigger Enabled="true" Name="7.0抽卡" Id="8ba6cbbe-8af0-4e3c-b71b-e5c71878f63a" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(?:909A|9099):">
                 <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="庇护所" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="87000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="神名" Id="05641586-848f-4c21-a5b7-a1e0cab63fa2" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF2:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="神名" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="59000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="法令" Id="4b6681db-4c9e-4e22-baac-eca4813053b1" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):DF3:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="法令" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="37000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="礼仪之铃" Id="48be68cf-d6e7-4ec6-9bf8-0b7c4c8a75ab" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6506:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="礼仪之铃" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="177000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="神祝祷" Id="0c5314b5-2a3c-4147-b3fe-b71c9f23dc3f" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D08:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="神祝祷" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="27000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="水流幕" Id="26a670d6-99f6-4d97-8e83-3a7cd85863f7" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6505:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="水流幕" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="无中生有" Id="fa1dda47-0911-4e37-baa1-8f9fcfbb07dd" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D06:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="无中生有" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="58000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="神速咏唱" Id="001b6c86-8bd6-4ce5-83b8-453ad731f86d" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):88:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="神速咏唱" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="117000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-                <Conditions />
-              </Trigger>
-            </Triggers>
-          </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="549755813888" Id="69ac2149-18f9-4c04-8831-b26112e8140d" Name="贤者（未测试" Enabled="true">
-            <Folders />
-            <Triggers>
-              <Trigger Enabled="true" Name="发炎" Id="9046288d-2dbb-4d4a-ab3f-bd11189b16aa" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF9:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="发炎" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="37000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="拯救" Id="ad1a66ae-950c-4422-b6f4-b568ebcdf8df" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EE6:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="拯救" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="88000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="神翼" Id="83ceb2e6-1abc-494f-855a-68429fa31f66" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EE7:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="神翼" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="43000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="坚角清汁" Id="dbee6b1e-196b-426e-a97d-444cd864c2a5" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEA:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="坚角清汁" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="28000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="白牛清汁" Id="a0593453-5f17-4867-b7c4-6e4f229d2fca" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEF:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="白牛清汁" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="43000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="寄生清汁" Id="aff9185e-f06e-4eb6-8248-631609b536fc" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEB:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="寄生清汁" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="28000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="自生" Id="628c9262-8a83-42a4-8cec-e411e0544bb7" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEE:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="自生" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="58000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="消化" Id="840bd4ab-4b09-4c97-857b-5ad51e2abaf2" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EED:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="消化" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="28000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="活化" Id="8ab31867-4aa1-4586-ba3a-7ea8aa7bfb4f" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EEC:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="活化" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="88000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="输血" Id="d158b18c-d2f6-4c74-b108-bc1ca7a54ec1" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF1:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="输血" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="118000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="泛输血" Id="50e8b691-fb6c-4d51-b233-f016ece6e93e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF7:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="泛输血" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="118000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="魂灵风息" Id="1d700b67-9f85-4bfb-91fc-e4410f843b48" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EFE:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="魂灵风息" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="118000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="混合" Id="2a8a7820-0efc-42f0-a07b-b89cadcb15f3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EFD:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="混合" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="58000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="整体论" Id="ccc75246-dfa9-48eb-a3af-f88b68e8dc69" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF6:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="整体论" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="118000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="根素" Id="07f19a45-8593-4bfc-8636-89cf427cf7c3" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):5EF5:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="根素" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="87000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-            </Triggers>
-          </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="134217728" Id="9d7c7e38-60dd-4fc5-b296-f4146a7586ae" Name="学者" Enabled="true">
-            <Folders />
-            <Triggers>
-              <Trigger Enabled="true" Name="深谋远虑之策" Id="17f09e89-855f-4b31-8e62-8c64a3141153" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D0A:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="绿帽" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="43000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="秘策" Id="3255fd49-7b0e-48c7-826f-9cc6d7f027dd" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):409E:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="秘策" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="87000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="连环计" Id="aa61b5e3-d404-47fc-bc60-8c51dac0c61b" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D0C:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="连环计" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="以太超流" Id="22c43dc2-6086-4bb1-a075-36e27bee6a71" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):A6:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="以太" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="炽天召唤" Id="3fc36563-7c85-436a-854b-97f371207516" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):40A1:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="大天使" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="异想的幻光" Id="ee9d2da2-a3eb-4553-895d-18a12b4e28da" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):409A:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="幻光" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="117000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="转化" Id="a4f6f2cd-42b5-4015-a45d-b4615bbacac2" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E03:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="转化" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="177000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="仙光的低语" Id="e161fea3-cc2c-430b-9d65-4930aca33a85" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):4099:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="低语" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="生命回生法" Id="c1668148-9bf1-4c57-b472-c854e3dc0605" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):650B:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="回生" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="疾风怒涛之计" Id="643ead84-f494-47d4-9b16-f3f2f1fc90f8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):650C:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="跑快快" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="117000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-            </Triggers>
-          </Folder>
-          <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4294967296" Id="108f2e47-419c-49c9-be9e-946bdb71b164" Name="占星术士" Enabled="true">
-            <Folders />
-            <Triggers>
-              <Trigger Enabled="false" Name="命运之轮" Id="6bd969bb-55c8-46ca-9f94-4acaef78736e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E1D:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="命运之轮" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="天星交错" Id="a60c07e6-46c4-45fd-b6b2-77872ee5bac6" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):40AC:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="天星交错" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="27000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="占卜" Id="53c0764e-86a7-4ef6-9c05-e0ced391bbfc" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):40A8:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="占卜" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="中间学派" Id="3774f982-bbee-4060-8d0b-492f79369929" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):40AF:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="中间学派" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="115000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="地星" Id="32311624-52fd-4c73-ae42-c8e3b0807660" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D0F:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="地星" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="55000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="擢升" Id="e28c6e67-aee2-47ff-b1a6-16fa97de9065" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6511:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="擢升" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="57000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="大宇宙" Id="86b99492-4f2e-4763-8b31-f4f7fbf7cf4d" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):6512:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="大宇宙" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="177000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="false" Name="抽卡" Id="96d2f830-5729-48e7-af3e-7b0bce632ce8" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E06:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="抽卡" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="27000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="先天" Id="d69d93fc-cba4-42d4-84c6-2da9b71bfe6e" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E1E:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="先天" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="37000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="小奥秘卡" Id="13f4732f-5a6b-48d7-8756-cb373dee0174" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):1D13:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="小奥秘卡" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="58000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                </Condition>
-              </Trigger>
-              <Trigger Enabled="true" Name="光速" Id="dd0b442b-be04-484d-93b0-b0b149193c14" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):E16:" PrevActionsRefire="Deny">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="光速" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="88000">
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="抽卡" ActionType="UseTTS" ExecutionDelayExpression="52000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
@@ -1468,9 +1552,9 @@
           </Folder>
         </Folders>
         <Triggers>
-          <Trigger Enabled="true" Name="奶妈Dot" Id="2638feeb-2f14-49e7-800a-66405493f417" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(4094|409C|40AA|5EFA|79|84|48C8|45C9|E0F|E18|5EE5|5EF4):" PrevActions="Interrupt">
+          <Trigger Enabled="true" Name="奶妈Dot" Id="ca533436-13f2-40ff-8f56-acc982c9fdf6" RegularExpression="^.{15}(?:\w+ |)1[56]:.{8}:(?&lt;caster&gt;[^:]+?):(4094|409C|40AA|5EFA|79|84|48C8|45C9|E0F|E18|5EE5|5EF4):" PrevActions="Interrupt">
             <Actions>
-              <Action OrderNumber="1" UseTTSTextExpression="补Dot" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="25000">
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="补Dot" ActionType="UseTTS" ExecutionDelayExpression="25000">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
             </Actions>
@@ -1482,9 +1566,9 @@
       </Folder>
     </Folders>
     <Triggers>
-      <Trigger Enabled="true" Name="重置" Id="09dd8215-4f59-4cc7-a29e-efcd08800c95" RegularExpression="^.{15}(?:\w+ |)21:.{8}:4000001[026]|^.{15}(?:\w+ |)00:0039::距离战斗开始还有20秒！|^.{15}(?:\w+ |)00:0839::“.*?”任务结束">
+      <Trigger Enabled="true" Name="重置" Id="2a814684-bff7-4868-9a60-3308d8699723" RegularExpression="^.{15}(?:\w+ |)21:.{8}:4000001[026]|^.{15}(?:\w+ |)00:0039::距离战斗开始还有20秒！|^.{15}(?:\w+ |)00:0839::“.*?”任务结束">
         <Actions>
-          <Action OrderNumber="1" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="CancelAllTrigger" ActionType="Trigger">
+          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TriggerOp="CancelAllTrigger" ActionType="Trigger">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
         </Actions>
