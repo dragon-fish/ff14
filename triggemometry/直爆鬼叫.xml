@@ -3,31 +3,22 @@
   <ExportedFolder Id="dc0e7ddc-1e0a-431f-a024-e66d1576a602" Name="直爆？斯国一！" Enabled="true">
     <Folders />
     <Triggers>
-      <Trigger Enabled="true" Source="None" Name="0x40 直击——" Id="16569422-abb5-420e-aee0-6ec0da685bc8" RegularExpression="">
-        <Actions>
-          <Action OrderNumber="1" ActionType="Placeholder" Description="双击下一条动作，替换“音频路径”就可以自定义播放的声音。&#xD;&#xA;它可以是本地文件地址，也可以是网络地址。" DescriptionOverride="True" />
-          <Action OrderNumber="1" LogLevel="Info" MessageBoxIconType="Information" MessageBoxText="爆！" PlaySoundFileExpression="https://cdn.jsdelivr.net/gh/dragon-fish/ff14/assets/audios/sugoi-2.mp3" UseTTSTextExpression="暴击" UseTTSVolumeExpression="80" ActionType="PlaySound">
-            <Condition Enabled="true" Grouping="Or" />
-          </Action>
-        </Actions>
-        <Condition Enabled="true" Grouping="Or" />
-      </Trigger>
       <Trigger Enabled="true" Source="FFXIVNetwork" IsReadme="True" Name="[总开关] 条件触发器" Id="5979c969-d461-44da-bfbf-98c38177bc21" RegularExpression="^(?&lt;type&gt;2[12])\|(?&lt;timestamp&gt;[^|]*)\|(?&lt;sourceId&gt;[^|]*)\|(?&lt;source&gt;[^|]*)\|(?&lt;id&gt;[^|]*)\|(?&lt;ability&gt;[^|]*)\|(?&lt;targetId&gt;[^|]*)\|(?&lt;target&gt;[^|]*)\|(?&lt;flags&gt;[^|]*)\|(?&lt;damage&gt;[^|]*)\|(?:[^|]*\|){14}(?&lt;targetCurrentHp&gt;[^|]*)\|(?&lt;targetMaxHp&gt;[^|]*)\|(?&lt;targetCurrentMp&gt;[^|]*)\|(?&lt;targetMaxMp&gt;[^|]*)\|(?:[^|]*\|){2}(?&lt;targetX&gt;[^|]*)\|(?&lt;targetY&gt;[^|]*)\|(?&lt;targetZ&gt;[^|]*)\|(?&lt;targetHeading&gt;[^|]*)\|(?&lt;currentHp&gt;[^|]*)\|(?&lt;maxHp&gt;[^|]*)\|(?&lt;currentMp&gt;[^|]*)\|(?&lt;maxMp&gt;[^|]*)\|(?:[^|]*\|){2}(?&lt;x&gt;[^|]*)\|(?&lt;y&gt;[^|]*)\|(?&lt;z&gt;[^|]*)\|(?&lt;heading&gt;[^|]*)\|(?&lt;sequence&gt;[^|]*)\|(?&lt;targetIndex&gt;[^|]*)\|(?&lt;targetCount&gt;[^|]*)\|(?&lt;ownerId&gt;[^|]*)\|(?&lt;ownerName&gt;[^|]*)\|(?&lt;effectDisplayType&gt;[^|]*)\|(?&lt;actionId&gt;[^|]*)\|(?&lt;actionAnimationId&gt;[^|]*)\|(?&lt;animationLockTime&gt;[^|]*)\|(?&lt;rotationHex&gt;[^|]*)\|" TestInput="21|2024-11-08T00:30:01.6280000+08:00|103E0E9D|小鱼君|6499|蛮荒崩裂|40000B97|木人|716003|B7E80000|F|EFA8000|0|0|0|0|0|0|0|0|0|0|0|0|44|44|0|10000|||-164.20|-15.60|8.09|-1.57|121510|172468|10000|10000|||-159.28|-15.35|6.02|-1.62|0000B2CE|0|1|00||01|6499|6499|1.150|3DF6|a14983f12a274afa" Description="看了30分钟触发器文档做出来玩的，非常神金。&#xD;&#xA;&#xD;&#xA;暴击、直击、直爆时，播放鬼畜音效，可以单独开关，也可以自由替换音频路径。&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;## 小超&#xD;&#xA;&#xD;&#xA;使用的技能ID ${id} !== 攻击(07)或射击(08) // 排除平A，不然有可能太吵&#xD;&#xA;">
         <Actions>
           <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="critical_flag" VariableExpression="${func:substring(-4, 2):${flags}}" ActionType="Variable" Asynchronous="False" Description="技能 flags 千位、百位表示暴击情况：&#xD;&#xA;0x20 = crit damage&#xD;&#xA;0x40 = direct hit damage&#xD;&#xA;0x60 = crit direct hit damage" />
           <Action OrderNumber="2" VariableOp="SetString" VariableName="dmg_flag" VariableExpression="${func:substring(-2, 2):${flags}}" Enabled="False" ActionType="Variable" Asynchronous="False" Description="日志中 flags 最后两位表示伤害类型：&#xD;&#xA;0x01 = dodge/miss&#xD;&#xA;0x03 = damage done&#xD;&#xA;0x04 = heal&#xD;&#xA;0x05 = blocked damage&#xD;&#xA;0x06 = parried damage&#xD;&#xA;0x33 = instant death" />
           <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e ${func:substring(-4, 1):${flags}}" Enabled="False" ActionType="NamedCallback" />
-          <Action OrderNumber="4" LogLevel="Info" MessageBoxIconType="Information" MessageBoxText="爆！" PlaySoundFileExpression="https://cdn.jsdelivr.net/gh/dragon-fish/ff14/assets/audios/sugoi-1.mp3" UseTTSTextExpression="暴击" UseTTSVolumeExpression="80" TriggerId="55addfba-290b-476a-abce-8600305b801b" TriggerForce="regexp,conditions" ActionType="Trigger">
+          <Action OrderNumber="4" TriggerId="55addfba-290b-476a-abce-8600305b801b" TriggerForce="regexp,conditions" ActionType="Trigger">
             <Condition Enabled="true" Grouping="Or">
               <ConditionSingle Enabled="true" ExpressionL="${var:critical_flag}" ExpressionTypeL="String" ExpressionR="20" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
           </Action>
-          <Action OrderNumber="5" LogLevel="Info" MessageBoxIconType="Information" MessageBoxText="爆！" PlaySoundFileExpression="https://cdn.jsdelivr.net/gh/dragon-fish/ff14/assets/audios/sugoi-1.mp3" UseTTSTextExpression="暴击" UseTTSVolumeExpression="80" TriggerId="16569422-abb5-420e-aee0-6ec0da685bc8" TriggerForce="regexp,conditions" ActionType="Trigger">
+          <Action OrderNumber="5" TriggerId="16569422-abb5-420e-aee0-6ec0da685bc8" TriggerForce="regexp,conditions" ActionType="Trigger">
             <Condition Enabled="true" Grouping="Or">
               <ConditionSingle Enabled="true" ExpressionL="${var:critical_flag}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
           </Action>
-          <Action OrderNumber="6" LogLevel="Info" MessageBoxIconType="Information" MessageBoxText="爆！" PlaySoundFileExpression="https://cdn.jsdelivr.net/gh/dragon-fish/ff14/assets/audios/sugoi-1.mp3" UseTTSTextExpression="暴击" UseTTSVolumeExpression="80" TriggerId="6ebff19d-c610-4aa6-9964-a8b5a3ab31b7" TriggerForce="regexp,conditions" ActionType="Trigger">
+          <Action OrderNumber="6" TriggerId="6ebff19d-c610-4aa6-9964-a8b5a3ab31b7" TriggerForce="regexp,conditions" ActionType="Trigger">
             <Condition Enabled="true" Grouping="Or">
               <ConditionSingle Enabled="true" ExpressionL="${var:critical_flag}" ExpressionTypeL="String" ExpressionR="60" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
@@ -42,19 +33,28 @@
           <ConditionSingle Enabled="true" ExpressionL="${source}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
         </Condition>
       </Trigger>
-      <Trigger Enabled="true" Source="None" Name="0x60 直爆！！" Id="6ebff19d-c610-4aa6-9964-a8b5a3ab31b7" RegularExpression="">
+      <Trigger Enabled="true" Source="None" Name="0x20 暴击！" Id="55addfba-290b-476a-abce-8600305b801b" RegularExpression="">
         <Actions>
           <Action OrderNumber="1" ActionType="Placeholder" Description="双击下一条动作，替换“音频路径”就可以自定义播放的声音。&#xD;&#xA;它可以是本地文件地址，也可以是网络地址。" DescriptionOverride="True" />
-          <Action OrderNumber="1" LogLevel="Info" MessageBoxIconType="Information" MessageBoxText="爆！" PlaySoundFileExpression="https://cdn.jsdelivr.net/gh/dragon-fish/ff14/assets/audios/unbelievable.mp3" UseTTSTextExpression="暴击" UseTTSVolumeExpression="80" ActionType="PlaySound">
+          <Action OrderNumber="2" PlaySoundFileExpression="https://cdn.jsdelivr.net/gh/dragon-fish/ff14/assets/audios/sugoi-1.mp3" ActionType="PlaySound">
             <Condition Enabled="true" Grouping="Or" />
           </Action>
         </Actions>
         <Condition Enabled="true" Grouping="Or" />
       </Trigger>
-      <Trigger Enabled="true" Source="None" Name="0x20 暴击！" Id="55addfba-290b-476a-abce-8600305b801b" RegularExpression="">
+      <Trigger Enabled="true" Source="None" Name="0x40 直击——" Id="16569422-abb5-420e-aee0-6ec0da685bc8" RegularExpression="">
         <Actions>
           <Action OrderNumber="1" ActionType="Placeholder" Description="双击下一条动作，替换“音频路径”就可以自定义播放的声音。&#xD;&#xA;它可以是本地文件地址，也可以是网络地址。" DescriptionOverride="True" />
-          <Action OrderNumber="2" LogLevel="Info" MessageBoxIconType="Information" MessageBoxText="爆！" PlaySoundFileExpression="https://cdn.jsdelivr.net/gh/dragon-fish/ff14/assets/audios/sugoi-1.mp3" UseTTSTextExpression="暴击" UseTTSVolumeExpression="80" ActionType="PlaySound">
+          <Action OrderNumber="2" PlaySoundFileExpression="https://cdn.jsdelivr.net/gh/dragon-fish/ff14/assets/audios/sugoi-2.mp3" ActionType="PlaySound">
+            <Condition Enabled="true" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="true" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Source="None" Name="0x60 直爆！！" Id="6ebff19d-c610-4aa6-9964-a8b5a3ab31b7" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" ActionType="Placeholder" Description="双击下一条动作，替换“音频路径”就可以自定义播放的声音。&#xD;&#xA;它可以是本地文件地址，也可以是网络地址。" DescriptionOverride="True" />
+          <Action OrderNumber="2" PlaySoundFileExpression="https://cdn.jsdelivr.net/gh/dragon-fish/ff14/assets/audios/unbelievable.mp3" ActionType="PlaySound">
             <Condition Enabled="true" Grouping="Or" />
           </Action>
         </Actions>
