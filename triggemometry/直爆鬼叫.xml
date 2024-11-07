@@ -7,18 +7,18 @@
         <Actions>
           <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="critical_flag" VariableExpression="${func:substring(-4, 2):${flags}}" ActionType="Variable" Asynchronous="False" Description="技能 flags 千位、百位表示暴击情况：&#xD;&#xA;0x20 = crit damage&#xD;&#xA;0x40 = direct hit damage&#xD;&#xA;0x60 = crit direct hit damage" />
           <Action OrderNumber="2" VariableOp="SetString" VariableName="dmg_flag" VariableExpression="${func:substring(-2, 2):${flags}}" Enabled="False" ActionType="Variable" Asynchronous="False" Description="日志中 flags 最后两位表示伤害类型：&#xD;&#xA;0x01 = dodge/miss&#xD;&#xA;0x03 = damage done&#xD;&#xA;0x04 = heal&#xD;&#xA;0x05 = blocked damage&#xD;&#xA;0x06 = parried damage&#xD;&#xA;0x33 = instant death" />
-          <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e ${func:substring(-4, 1):${flags}}" Enabled="False" ActionType="NamedCallback" />
-          <Action OrderNumber="4" TriggerId="55addfba-290b-476a-abce-8600305b801b" TriggerForce="regexp,conditions" ActionType="Trigger">
+          <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e critical_flag=${var:critical_flag}" Enabled="False" ActionType="NamedCallback" Asynchronous="False" />
+          <Action OrderNumber="4" TriggerId="55addfba-290b-476a-abce-8600305b801b" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
             <Condition Enabled="true" Grouping="Or">
               <ConditionSingle Enabled="true" ExpressionL="${var:critical_flag}" ExpressionTypeL="String" ExpressionR="20" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
           </Action>
-          <Action OrderNumber="5" TriggerId="16569422-abb5-420e-aee0-6ec0da685bc8" TriggerForce="regexp,conditions" ActionType="Trigger">
+          <Action OrderNumber="5" TriggerId="16569422-abb5-420e-aee0-6ec0da685bc8" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
             <Condition Enabled="true" Grouping="Or">
               <ConditionSingle Enabled="true" ExpressionL="${var:critical_flag}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
           </Action>
-          <Action OrderNumber="6" TriggerId="6ebff19d-c610-4aa6-9964-a8b5a3ab31b7" TriggerForce="regexp,conditions" ActionType="Trigger">
+          <Action OrderNumber="6" TriggerId="6ebff19d-c610-4aa6-9964-a8b5a3ab31b7" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
             <Condition Enabled="true" Grouping="Or">
               <ConditionSingle Enabled="true" ExpressionL="${var:critical_flag}" ExpressionTypeL="String" ExpressionR="60" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
